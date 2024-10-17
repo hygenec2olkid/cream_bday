@@ -16,7 +16,7 @@ const Cake = () => {
   const cakeRef = useRef(null); // Reference for the cake image
 
   const cakeStages = [
-    { label: "Unbaked Cake", image: "public/static/images/cake/cake.png" },
+    { label: "Unbaked Cake", image: "/static/images/cake/cake.png" },
   ];
 
   const handleImageClick = () => {
