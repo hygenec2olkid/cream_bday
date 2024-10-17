@@ -12,11 +12,11 @@ const images = [
 function FirstPage() {
   return (
     <>
-      <div className="text-6xl leading-tight">
+      <div className="text-6xl leading-tight text-[#7F27FF]">
         สุขสันต์
         <br />
         วันเกิด
-        <br /> Ice-cream
+        <br /> Ice-cream😉
       </div>
       <ImageStack images={images}></ImageStack>
     </>

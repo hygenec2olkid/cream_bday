@@ -11,7 +11,7 @@ function App() {
         <FirstPage />
       </Frame>
 
-      <Frame>
+      <Frame className="h-1/2">
         <MusicPlayerSlider />
       </Frame>
 
