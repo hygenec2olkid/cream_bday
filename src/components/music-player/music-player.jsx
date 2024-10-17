@@ -30,7 +30,7 @@ const Widget = styled("div")(({ theme }) => ({
   margin: "auto",
   position: "relative",
   zIndex: 1,
-  backgroundColor: "rgba(255,255,255,0.4)",
+  backgroundColor: "#B7B7B7",
   backdropFilter: "blur(40px)",
 }));
 
@@ -85,7 +85,7 @@ export default function MusicPlayerSlider() {
   };
 
   const formatDuration = (value) => {
-    const roundedValue = Math.floor(value); 
+    const roundedValue = Math.floor(value);
     const minute = Math.floor(roundedValue / 60);
     const secondLeft = roundedValue - minute * 60;
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
