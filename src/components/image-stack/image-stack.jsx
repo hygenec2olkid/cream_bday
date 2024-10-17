@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const ImageStack = ({ images }) => {
+const ImageStack = ({ images, imagesSlice }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -20,7 +19,7 @@ const ImageStack = ({ images }) => {
   };
 
   const getRandomRotation = () => {
-    return Math.floor(Math.random() * 26) - 15; 
+    return Math.floor(Math.random() * 26) - 15;
   };
 
   const getIndex = (index) => {
@@ -57,7 +56,7 @@ const ImageStack = ({ images }) => {
             pagination={{ clickable: true }}
             loop={true}
           >
-            {images.map((image, index) => (
+            {imagesSlice.map((image, index) => (
               <SwiperSlide key={index}>
                 <img
                   src={image}

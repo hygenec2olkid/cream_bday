@@ -4,10 +4,31 @@ import "../image-stack/image-stack.css";
 import { motion } from "framer-motion";
 
 const images = [
-  "/static/images/main-img/5E15DBA2-A9AB-4D22-94F6-37BD37269DB2.JPG",
-  "/static/images/main-img/9E20F950-208C-4446-AF5E-5FC6858EFA6E.JPG",
+  "/static/images/baby-cream/IMG_6781.jpg",
+  "/static/images/baby-cream/C35B6A3D-F7D2-4A23-8E79-C752B8602113.jpg",
+  "/static/images/baby-cream/IMG_6780.jpg",
+  "/static/images/baby-cream/IMG_6779.jpg",
+];
+
+const imagesSlice = [
   "/static/images/main-img/IMG_3428.JPG",
   "/static/images/main-img/IMG_4443.jpg",
+  "/static/images/main-img/IMG_4717.jpg",
+  "/static/images/main-img/IMG_5472.jpg",
+  "/static/images/main-img/9E20F950-208C-4446-AF5E-5FC6858EFA6E.JPG",
+  "/static/images/main-img/IMG_5735.jpg",
+  "/static/images/main-img/IMG_5775.jpg",
+  "/static/images/main-img/IMG_5933.jpg",
+  "/static/images/main-img/IMG_5936.jpg",
+  "/static/images/main-img/IMG_6164.jpg",
+  "/static/images/main-img/IMG_6253.jpg",
+  "/static/images/main-img/IMG_6425.jpg",
+  "/static/images/main-img/IMG_6489.jpg",
+  "/static/images/main-img/IMG_6694.jpg",
+  "/static/images/main-img/IMG_6698.jpg",
+  "/static/images/main-img/IMG_6702.jpg",
+  "/static/images/main-img/IMG_6709.jpg",
+  "/static/images/main-img/IMG_6711.jpg",
 ];
 
 function FirstPage() {
@@ -36,21 +57,6 @@ function FirstPage() {
         🥳
       </motion.div>
 
-      <img
-        className="absolute bottom-[60vh] left-5 rotate-[-12deg] z-50"
-        height={100}
-        width={100}
-        src={"/static/images/baby-cream/IMG_6780.jpg"}
-      ></img>
-
-      <img
-        className="absolute bottom-[55vh] right-4 rotate-[3deg] z-50"
-        height={100}
-        width={100}
-        src={
-          "/static/images/baby-cream/C35B6A3D-F7D2-4A23-8E79-C752B8602113.jpg"
-        }
-      ></img>
       <div className="text-[3.25rem] leading-tight text-[#7F27FF] pt-[3rem] pb-[5rem]">
         สุขสันต์
         <br />
@@ -58,7 +64,7 @@ function FirstPage() {
         <br />
         Ice-cream🎉
       </div>
-      <ImageStack images={images}></ImageStack>
+      <ImageStack images={images} imagesSlice={imagesSlice}></ImageStack>
     </>
   );
 }
