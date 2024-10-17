@@ -51,7 +51,7 @@ function FirstPage() {
           "/static/images/baby-cream/C35B6A3D-F7D2-4A23-8E79-C752B8602113.jpg"
         }
       ></img>
-      <div className="text-[3.25rem] leading-tight text-[#7F27FF] pt-[3rem] pb-[6rem]">
+      <div className="text-[3.25rem] leading-tight text-[#7F27FF] pt-[3rem] pb-[5rem]">
         สุขสันต์
         <br />
         วันเกิด
