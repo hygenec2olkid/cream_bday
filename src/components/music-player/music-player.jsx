@@ -188,7 +188,7 @@ export default function MusicPlayerSlider() {
       <WallPaper />
       <audio
         ref={audioRef}
-        src="src/assets/music/test.mp3"
+        src="/static/music/test.mp3"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={() => setPosition(0)}
       />
