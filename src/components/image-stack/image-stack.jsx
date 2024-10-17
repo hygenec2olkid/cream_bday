@@ -19,7 +19,6 @@ const ImageStack = ({ images, imagesSlice }) => {
   };
 
   useEffect(() => {
-    // Shuffle images array on component render
     const shuffleArray = (array) => {
       let shuffled = [...array];
       for (let i = shuffled.length - 1; i > 0; i--) {
@@ -30,7 +29,7 @@ const ImageStack = ({ images, imagesSlice }) => {
     };
 
     setShuffledImages(shuffleArray(images));
-  }, [images]); // Ensure shuffling happens when `images` prop changes
+  }, [images]);
 
   const getRandomRotation = () => {
     return Math.floor(Math.random() * 26) - 15;

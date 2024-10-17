@@ -85,7 +85,7 @@ export default function MusicPlayerSlider() {
   };
 
   const formatDuration = (value) => {
-    const roundedValue = Math.floor(value); // Round down to nearest whole number
+    const roundedValue = Math.floor(value); 
     const minute = Math.floor(roundedValue / 60);
     const secondLeft = roundedValue - minute * 60;
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;

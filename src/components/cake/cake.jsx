@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Confetti from "react-confetti";
-import "./cake.css"; // Ensure your styles are applied correctly
+import "./cake.css";
 
 const Cake = () => {
-  const [startShaking, setStartShaking] = useState(false); // Control shaking state
-  const [showConfetti, setShowConfetti] = useState(false); // Control confetti display
+  const [startShaking, setStartShaking] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
   const [showLastMsg, setShowLastMsg] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -13,32 +13,29 @@ const Cake = () => {
   });
   const [confettiPosition, setConfettiPosition] = useState({ x: 0, y: 0 });
 
-  const cakeRef = useRef(null); // Reference for the cake image
+  const cakeRef = useRef(null);
 
   const cakeStages = [
     { label: "Unbaked Cake", image: "/static/images/cake/cake.png" },
   ];
 
   const handleImageClick = () => {
-    setStartShaking(true); // Start shaking and scaling when image is clicked
+    setStartShaking(true);
 
-    // Get the position of the cake image
     if (cakeRef.current) {
       const rect = cakeRef.current.getBoundingClientRect();
       setConfettiPosition({
-        x: rect.left + rect.width / 2, // Center x position
-        y: rect.top + rect.height / 2, // Center y position
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
       });
     }
 
-    // Trigger confetti after the shaking animation ends (e.g., 5 seconds)
     setTimeout(() => {
       setShowConfetti(true);
-      setShowLastMsg(true); // Show confetti after shake ends
-    }, 5000); // 5-second delay to match the animation duration
+      setShowLastMsg(true);
+    }, 5000);
   };
 
-  // Handle resizing window to adjust confetti size
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
@@ -51,12 +48,11 @@ const Cake = () => {
     };
   }, []);
 
-  // Stop confetti after 3 seconds
   useEffect(() => {
     if (showConfetti) {
       setTimeout(() => {
-        setShowConfetti(false); // Stop confetti after 3 seconds
-        setStartShaking(false); // Stop shaking as well
+        setShowConfetti(false);
+        setStartShaking(false);
       }, 3000);
     }
   }, [showConfetti]);
@@ -69,7 +65,7 @@ const Cake = () => {
       <div className="text-3xl text-[#7F27FF] flex items-center mt-[1rem]">
         <div>ถึงเวลาเป่าเค้กแล้วววว</div>
         <motion.div
-          className="text-5xl ml-1" // Use margin-left for spacing
+          className="text-5xl ml-1"
           animate={{ y: [0, -2, 2, 0], opacity: [1, 0.8, 1] }}
           transition={{
             duration: 2,
@@ -83,23 +79,23 @@ const Cake = () => {
 
       <motion.div
         key={cakeStages[0].label}
-        initial={{ opacity: 1, scale: 1, rotate: 0 }} // Start normal-sized when not clicked
+        initial={{ opacity: 1, scale: 1, rotate: 0 }}
         animate={
           startShaking
             ? {
-                scale: [0.5, 1], // Start smaller, grow to full size
-                rotate: [0, 15, -15, 15, -15, 0], // Rotate back and forth for shaking
+                scale: [0.5, 1],
+                rotate: [0, 15, -15, 15, -15, 0],
               }
             : { scale: 1, rotate: 0 }
-        } // Stay normal size and no rotation if not clicked
+        }
         transition={{
-          duration: 5, // Duration for grow and shake
-          ease: "easeInOut", // Optional easing function
-          loop: startShaking ? Infinity : 0, // Only loop if shaking is started
+          duration: 5,
+          ease: "easeInOut",
+          loop: startShaking ? Infinity : 0,
         }}
         className="cake-stage"
-        onClick={handleImageClick} // Click handler to start animation
-        ref={cakeRef} // Set the ref here
+        onClick={handleImageClick}
+        ref={cakeRef}
       >
         <img
           src={cakeStages[0].image}
@@ -111,27 +107,27 @@ const Cake = () => {
       {/* Confetti */}
       {showConfetti && (
         <Confetti
-          x={confettiPosition.x} // Position the confetti
+          x={confettiPosition.x}
           y={confettiPosition.y}
           width={windowSize.width}
           height={windowSize.height}
-          numberOfPieces={700} // Customize number of confetti pieces
-          gravity={0.05} // Adjust how quickly confetti falls
-          recycle={false} // Stop confetti after one burst
+          numberOfPieces={700}
+          gravity={0.05}
+          recycle={false}
           style={{
-            position: "absolute", // Use absolute positioning
-            left: 0, // Set left to 0 for absolute positioning
-            top: 0, // Set top to 0 for absolute positioning
-            zIndex: 9999, // Ensure it’s on top
-            pointerEvents: "none", // Ensure it doesn't block interactions
+            position: "absolute",
+            left: 0,
+            top: 0,
+            zIndex: 9999,
+            pointerEvents: "none",
           }}
         />
       )}
       {showLastMsg && (
         <motion.div
-          initial={{ opacity: 0, y: 50 }} // Start hidden and below
-          animate={{ opacity: 1, y: 0 }} // Fade in and slide up
-          transition={{ duration: 1, ease: "easeOut" }} // Transition duration and easing
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className=" text-center text-xl text-[#7F27FF]"
         >
           Happy Birth Day! 🎂 <br />
