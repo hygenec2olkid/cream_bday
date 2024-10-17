@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f7f3e9;
+
+  background-color: #f5efff;
 }
 
 .cake-stage {
@@ -15,5 +15,5 @@
 }
 
 .cake-image {
-    padding: 20px;
+  padding: 20px;
 }

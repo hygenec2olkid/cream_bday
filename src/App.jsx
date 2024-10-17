@@ -16,7 +16,9 @@ function App() {
         <BlogBlessing />
       </Frame>
 
-      <Cake />
+      <Frame>
+        <Cake />
+      </Frame>
     </>
   );
 }

@@ -66,7 +66,20 @@ const Cake = () => {
       className="cake-container"
       style={{ position: "relative", overflow: "hidden" }}
     >
-      <div>มาเป่าเค้กกันเถอะ</div>
+      <div className="text-3xl text-[#7F27FF] flex items-center">
+        <div>ถึงเวลาเป่าเค้กแล้วววว</div>
+        <motion.div
+          className="text-5xl ml-1" // Use margin-left for spacing
+          animate={{ y: [0, -2, 2, 0], opacity: [1, 0.8, 1] }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        >
+          🌬️
+        </motion.div>
+      </div>
 
       <motion.div
         key={cakeStages[0].label}
@@ -103,7 +116,7 @@ const Cake = () => {
           width={windowSize.width}
           height={windowSize.height}
           numberOfPieces={700} // Customize number of confetti pieces
-          gravity={0.1} // Adjust how quickly confetti falls
+          gravity={0.05} // Adjust how quickly confetti falls
           recycle={false} // Stop confetti after one burst
           style={{
             position: "absolute", // Use absolute positioning
@@ -114,7 +127,17 @@ const Cake = () => {
           }}
         />
       )}
-      {showLastMsg && <div>ของขวัญวันเกิดไว้เอาไปให้วันที่ 23 นะ</div>}
+      {showLastMsg && (
+        <motion.div
+          initial={{ opacity: 0, y: 50 }} // Start hidden and below
+          animate={{ opacity: 1, y: 0 }} // Fade in and slide up
+          transition={{ duration: 1, ease: "easeOut" }} // Transition duration and easing
+          className="py-[3rem] text-center text-xl text-[#7F27FF]"
+        >
+          Happy Birth Day! 🎂 <br />
+          ของขวัญวันเกิดไว้เอาไปให้วันที่ 23 นะจ๊ะ
+        </motion.div>
+      )}
     </div>
   );
 };
