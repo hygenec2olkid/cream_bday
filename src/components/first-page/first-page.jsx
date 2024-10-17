@@ -37,14 +37,14 @@ function FirstPage() {
       </motion.div>
 
       <img
-        className="absolute bottom-[58%] left-5 rotate-[-12deg] z-50"
+        className="absolute bottom-[60vh] left-5 rotate-[-12deg] z-50"
         height={100}
         width={100}
         src={"/static/images/baby-cream/IMG_6780.jpg"}
       ></img>
 
       <img
-        className="absolute bottom-[54%] right-4 rotate-[3deg] z-50"
+        className="absolute bottom-[55vh] right-4 rotate-[3deg] z-50"
         height={100}
         width={100}
         src={
