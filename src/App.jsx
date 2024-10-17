@@ -10,19 +10,13 @@ function App() {
       <Frame>
         <FirstPage />
       </Frame>
-      
-      <MusicPlayerSlider />
-      {/* <Frame className="h-1/2">
-  
-      </Frame> */}
 
       <Frame>
+        <MusicPlayerSlider />
         <BlogBlessing />
       </Frame>
 
-      <Frame>
-        <Cake />
-      </Frame>
+      <Cake />
     </>
   );
 }

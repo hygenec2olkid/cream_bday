@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -7,16 +7,30 @@ import "swiper/css/pagination";
 
 const ImageStack = ({ images, imagesSlice }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+
+  const [shuffledImages, setShuffledImages] = useState([]);
 
   const openModal = (index) => {
-    setActiveIndex(index);
     setIsOpen(true);
   };
 
   const closeModal = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    // Shuffle images array on component render
+    const shuffleArray = (array) => {
+      let shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    setShuffledImages(shuffleArray(images));
+  }, [images]); // Ensure shuffling happens when `images` prop changes
 
   const getRandomRotation = () => {
     return Math.floor(Math.random() * 26) - 15;
@@ -29,7 +43,7 @@ const ImageStack = ({ images, imagesSlice }) => {
   return (
     <div className="image-stack">
       <div className="stack">
-        {images.map((image, index) => (
+        {shuffledImages.map((image, index) => (
           <img
             key={index}
             src={image}
@@ -49,7 +63,6 @@ const ImageStack = ({ images, imagesSlice }) => {
             &times;
           </button>
           <Swiper
-            initialSlide={activeIndex}
             spaceBetween={50}
             slidesPerView={1}
             navigation={{ nextEl: null, prevEl: null }}
