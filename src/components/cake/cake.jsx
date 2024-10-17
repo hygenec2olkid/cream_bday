@@ -66,7 +66,7 @@ const Cake = () => {
       className="cake-container"
       style={{ position: "relative", overflow: "hidden" }}
     >
-      <div className="text-3xl text-[#7F27FF] flex items-center">
+      <div className="text-3xl text-[#7F27FF] flex items-center mt-[1rem]">
         <div>ถึงเวลาเป่าเค้กแล้วววว</div>
         <motion.div
           className="text-5xl ml-1" // Use margin-left for spacing
@@ -132,7 +132,7 @@ const Cake = () => {
           initial={{ opacity: 0, y: 50 }} // Start hidden and below
           animate={{ opacity: 1, y: 0 }} // Fade in and slide up
           transition={{ duration: 1, ease: "easeOut" }} // Transition duration and easing
-          className="py-[3rem] text-center text-xl text-[#7F27FF]"
+          className=" text-center text-xl text-[#7F27FF]"
         >
           Happy Birth Day! 🎂 <br />
           ของขวัญวันเกิดไว้เอาไปให้วันที่ 23 นะจ๊ะ
