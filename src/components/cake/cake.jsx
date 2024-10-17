@@ -16,7 +16,7 @@ const Cake = () => {
   const cakeRef = useRef(null); // Reference for the cake image
 
   const cakeStages = [
-    { label: "Unbaked Cake", image: "src/assets/cake/cake.png" },
+    { label: "Unbaked Cake", image: "public/static/images/cake/cake.png" },
   ];
 
   const handleImageClick = () => {
@@ -102,7 +102,7 @@ const Cake = () => {
           y={confettiPosition.y}
           width={windowSize.width}
           height={windowSize.height}
-          numberOfPieces={500} // Customize number of confetti pieces
+          numberOfPieces={700} // Customize number of confetti pieces
           gravity={0.1} // Adjust how quickly confetti falls
           recycle={false} // Stop confetti after one burst
           style={{
