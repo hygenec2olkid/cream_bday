@@ -37,21 +37,21 @@ function FirstPage() {
       </motion.div>
 
       <img
-        className="absolute bottom-[45%] left-5 rotate-[-12deg]"
+        className="absolute bottom-[48%] left-5 rotate-[-12deg]"
         height={100}
         width={100}
         src={"/static/images/baby-cream/IMG_6780.jpg"}
       ></img>
 
       <img
-        className="absolute bottom-[43%] right-5 rotate-[3deg]"
+        className="absolute bottom-[44%] right-5 rotate-[3deg]"
         height={100}
         width={100}
         src={
           "/static/images/baby-cream/C35B6A3D-F7D2-4A23-8E79-C752B8602113.jpg"
         }
       ></img>
-      <div className="text-7xl leading-snug text-[#7F27FF] pt-[25%] pb-[30%] pl-[5%]">
+      <div className="text-7xl leading-tight text-[#7F27FF] pt-[25%] pb-[35%] pl-[5%]">
         สุขสันต์
         <br />
         วันเกิด
