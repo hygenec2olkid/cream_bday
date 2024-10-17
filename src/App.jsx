@@ -22,15 +22,6 @@ function App() {
       <Frame>
         <Cake />
       </Frame>
-
-      <Frame>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus animi omnis ullam non esse. Rerum beatae maiores
-          officia at! Amet error pariatur temporibus incidunt provident deserunt
-          illum est odit ducimus!
-        </div>
-      </Frame>
     </>
   );
 }
