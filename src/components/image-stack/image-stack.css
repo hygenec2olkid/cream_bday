@@ -18,8 +18,8 @@
 
 .stacked-image {
   position: absolute;
-  width: 200px;
-  height: 300px;
+  width: 230px;
+  height: 330px;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -56,7 +56,7 @@
   right: 20px;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #3c3d37;
   cursor: pointer;
   z-index: 1000;
