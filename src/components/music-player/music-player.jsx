@@ -19,7 +19,7 @@ const WallPaper = styled("div")({
   top: 0,
   left: 0,
   overflow: "hidden",
-  background: "linear-gradient(rgb(255, 38, 142) 0%, rgb(255, 105, 79) 100%)",
+  background: "#F5EFFF",
 });
 
 const Widget = styled("div")(({ theme }) => ({
@@ -56,7 +56,7 @@ const TinyText = styled(Typography)({
 
 export default function MusicPlayerSlider() {
   const audioRef = React.useRef(null);
-  const duration = 200; // seconds (placeholder, real duration comes from audio)
+  const duration = 240 + 48;
   const [position, setPosition] = React.useState(0);
   const [paused, setPaused] = React.useState(true);
   const [volume, setVolume] = React.useState(30);
@@ -85,8 +85,9 @@ export default function MusicPlayerSlider() {
   };
 
   const formatDuration = (value) => {
-    const minute = Math.floor(value / 60);
-    const secondLeft = value - minute * 60;
+    const roundedValue = Math.floor(value); // Round down to nearest whole number
+    const minute = Math.floor(roundedValue / 60);
+    const secondLeft = roundedValue - minute * 60;
     return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
   };
 
@@ -97,7 +98,7 @@ export default function MusicPlayerSlider() {
           <CoverImage>
             <img
               alt="can't win - Chilling Sunday"
-              src="/static/images/sliders/chilling-sunday.jpg"
+              src="/static/music/IMG_66C92896CA6C-1.jpeg"
             />
           </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
@@ -105,13 +106,10 @@ export default function MusicPlayerSlider() {
               variant="caption"
               sx={{ color: "text.secondary", fontWeight: 500 }}
             >
-              Jun Pulse
+              WWJ
             </Typography>
             <Typography noWrap>
-              <b>คนเก่าเขาทำไว้ดี (Can&apos;t win)</b>
-            </Typography>
-            <Typography noWrap sx={{ letterSpacing: -0.25 }}>
-              Chilling Sunday &mdash; คนเก่าเขาทำไว้ดี
+              <b>คำอวยพร</b>
             </Typography>
           </Box>
         </Box>
@@ -188,7 +186,7 @@ export default function MusicPlayerSlider() {
       <WallPaper />
       <audio
         ref={audioRef}
-        src="/static/music/test.mp3"
+        src="/static/music/bd.mp3"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={() => setPosition(0)}
       />

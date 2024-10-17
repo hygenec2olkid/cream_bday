@@ -10,10 +10,11 @@ function App() {
       <Frame>
         <FirstPage />
       </Frame>
-
-      <Frame className="h-1/2">
-        <MusicPlayerSlider />
-      </Frame>
+      
+      <MusicPlayerSlider />
+      {/* <Frame className="h-1/2">
+  
+      </Frame> */}
 
       <Frame>
         <BlogBlessing />
